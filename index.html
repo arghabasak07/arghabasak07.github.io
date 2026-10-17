@@ -31,9 +31,13 @@
   "knowsAbout": ["Data Analysis", "Business Analysis", "Business Intelligence", "SQL", "Python", "PostgreSQL", "Power BI", "Metabase", "ETL", "n8n", "Workflow Automation", "AI Automation"]
 }
 </script>
-<!-- Vercel Web Analytics -->
-<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
-<script defer src="/_vercel/insights/script.js"></script>
+<!-- Vercel Web Analytics (only on the Vercel deployment; the GitHub Pages copy has no /_vercel endpoint) -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  if (location.hostname.endsWith(".vercel.app")) {
+    const s = document.createElement("script"); s.defer = true; s.src = "/_vercel/insights/script.js"; document.head.appendChild(s);
+  }
+</script>
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0d0e'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' text-anchor='middle' fill='%235eead4'%3EAB%3C/text%3E%3C/svg%3E">
